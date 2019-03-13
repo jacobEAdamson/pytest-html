@@ -478,7 +478,7 @@ class HTMLReport(object):
                 value = html.a(value, href=value, target='_blank')
             elif isinstance(value, (list, tuple, set)):
                 value = ', '.join((str(i) for i in value))
-            rows.append(html.tr(html.td(key), html.td(value)))
+            rows.append(html.tr(html.td(key), html.td(html.pre(value))))
 
         environment.append(html.table(rows, id='environment'))
         return environment
